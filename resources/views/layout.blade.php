@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Título por defecto')</title>
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('css/estilo.css') }}">
     <style>
         .active a{
             color: red;
             text-decoration: none;
         }
+        
     </style>
 </head>
-<body>
+<body >
     <h1>Layout</h1>
     <nav>
     <ul>
