@@ -1,18 +1,19 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use App\Mail\MensajeRecibido;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
 class MensajesController extends Controller
 {
     public function store(Request $request){
-        return $request->validate([
+       $mensaje = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
             'asunto' => 'required',
             'content' => 'required',
         ]);
-        return 'Datos validados';
+        Mail::to('jose.cerda66@gmail.com')->send(new MensajeRecibido($mensaje));
+        return view('emails.mensaje-enviado');
     }
 }
