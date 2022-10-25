@@ -5,12 +5,13 @@ Portafolio
 @section('content')
     <h1>Portafolio</h1>
     <ul>
-        @isset ($portafolio)  
-    @foreach ($portafolio as $item)
-          <li>  {{ $item['title'] }} </li>
-    @endforeach
-    @else
+       
+    @forelse ($portafolio as $item)
+          <li>  {{ $item->title }} </li>
+          <br>
+          <li>  {{ $item->descripcion }} </li>
+    @empty
     <li>No hay proyectos para mostrar</li>
-    @endisset
+    @endforelse
     </ul>
 @endsection
