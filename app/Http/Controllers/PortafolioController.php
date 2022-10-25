@@ -13,7 +13,7 @@ class PortafolioController extends Controller
      */
     public function index()
     {
-        $portafolio = Project::get();
+        $portafolio = Project::latest()->paginate(2);
         return view('portfolio',compact('portafolio'));
     }
 }
