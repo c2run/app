@@ -16,4 +16,12 @@ class PortafolioController extends Controller
         $portafolio = Project::latest()->paginate(2);
         return view('portfolio',compact('portafolio'));
     }
+
+    public function show($id){
+        $project = Project::findOrFail($id);
+
+        return view('projects/show',[
+            'project' => $project
+        ]);
+    }
 }

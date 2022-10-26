@@ -7,11 +7,7 @@ Portafolio
     <ul>
        
     @forelse ($portafolio as $item)
-          <li>  {{ $item->title }} </li>
-          <br>
-          <li>  {{ $item->descripcion }} </li>
-          <br>
-          <li>  {{ $item->updated_at->diffForHumans()}} </li>
+          <li> <a href="{{ route('portafolio/show', $item->id)}}"> {{ $item->title }} </a></li>
     @empty
     <li>No hay proyectos para mostrar</li>
     @endforelse
