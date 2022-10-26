@@ -7,7 +7,7 @@ Portafolio
     <ul>
        
     @forelse ($portafolio as $item)
-          <li> <a href="{{ route('portafolio/show', $item->id)}}"> {{ $item->title }} </a></li>
+          <li> <a href="{{ route('portafolio/show', $item->url)}}"> {{ $item->title }} </a></li>
     @empty
     <li>No hay proyectos para mostrar</li>
     @endforelse

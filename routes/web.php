@@ -16,7 +16,7 @@ Route::view('/', 'home')->name('home');
 Route::view('/acerca', 'about')->name('about');
 
 Route::get('/portafolio', [PortafolioController::class, 'index'])->name('portafolio');
-Route::get('/portafolio/{id}', [PortafolioController::class, 'show'])->name('portafolio/show');
+Route::get('/portafolio/{project}', [PortafolioController::class, 'show'])->name('portafolio/show');
 
 
 Route::view('/contacto', 'contact')->name('contacto');

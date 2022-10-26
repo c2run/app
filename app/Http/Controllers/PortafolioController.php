@@ -17,8 +17,9 @@ class PortafolioController extends Controller
         return view('portfolio',compact('portafolio'));
     }
 
-    public function show($id){
-        $project = Project::findOrFail($id);
+    public function show(Project $project){
+        
+       
 
         return view('projects/show',[
             'project' => $project
