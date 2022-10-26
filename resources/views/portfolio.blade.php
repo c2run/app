@@ -4,8 +4,8 @@ Portafolio
 @endsection
 @section('content')
     <h1>Portafolio</h1>
+    <a href="{{route('portafolio/create')}}">Crear proyecto</a>
     <ul>
-       
     @forelse ($portafolio as $item)
           <li> <a href="{{ route('portafolio/show', $item->url)}}"> {{ $item->title }} </a></li>
     @empty

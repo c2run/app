@@ -18,11 +18,22 @@ class PortafolioController extends Controller
     }
 
     public function show(Project $project){
-        
-       
-
         return view('projects/show',[
             'project' => $project
         ]);
+    }
+
+    public function create(){
+        return view('projects/create');
+    }
+
+    public function store(){
+       //se utiliza el modelo project y se llama el método create.
+       Project::create([
+        'title' => request('title'),
+        'url' => request('url'),
+        'descripcion' => request('descripcion')
+       ]);
+       return redirect()->route('portafolio');
     }
 }
