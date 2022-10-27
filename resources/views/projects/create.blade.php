@@ -3,6 +3,13 @@
 
 @section('content')
     <h1>Crear nuevo proyecto</h1>
+    @if ($errors->any())
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+        @endif
     <form action="{{route('portafolio/store')}}" method="POST">
         @csrf
         <label for="">Titulo del proyecto</label>
