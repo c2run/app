@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -27,15 +28,8 @@ class PortafolioController extends Controller
         return view('projects/create');
     }
 
-    public function store(){
-
-        $campos = request()->validate([
-            'title' => 'required',
-            'url' => 'required',
-            'descripcion' => 'required',
-    ]);
-       //se utiliza el modelo project y se llama el método create.
-       Project::create($campos);
+    public function store(CreateProjectRequest $request){
+       Project::create($request->validated());
        return redirect()->route('portafolio');
     }
 }
