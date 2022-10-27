@@ -28,12 +28,14 @@ class PortafolioController extends Controller
     }
 
     public function store(){
+
+        $campos = request()->validate([
+            'title' => 'required',
+            'url' => 'required',
+            'descripcion' => 'required',
+    ]);
        //se utiliza el modelo project y se llama el método create.
-       Project::create([
-        'title' => request('title'),
-        'url' => request('url'),
-        'descripcion' => request('descripcion')
-       ]);
+       Project::create($campos);
        return redirect()->route('portafolio');
     }
 }
