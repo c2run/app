@@ -3,13 +3,7 @@
 
 @section('content')
     <h1>Editar proyecto</h1>
-        @if ($errors->any())
-        <ul>
-            @foreach($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-        @endif
+    @include('partials/validation-errors')
         <form action="{{route('portafolio/update', compact('project'))}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('put')
