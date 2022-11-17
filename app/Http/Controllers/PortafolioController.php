@@ -40,4 +40,9 @@ class PortafolioController extends Controller
         
         return redirect()->route('portafolio/show', $project);
     }
+
+    public function destroy(Project $project){
+        $project->delete();
+        return redirect()->route('portafolio');
+    }
 }

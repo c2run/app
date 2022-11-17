@@ -23,7 +23,7 @@ Route::put('/portafolio/{project}', [PortafolioController::class, 'update'])->na
 Route::post('/portafolio', [PortafolioController::class, 'store'])->name('portafolio/store');
 Route::get('/portafolio/{project}', [PortafolioController::class, 'show'])->name('portafolio/show');
 
-
+Route::delete('portafolio/{project}', [PortafolioController::class, 'destroy'])->name('portafolio.destroy');
 
 Route::view('/contacto', 'contact')->name('contacto');
 
