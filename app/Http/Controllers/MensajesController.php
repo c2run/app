@@ -15,5 +15,7 @@ class MensajesController extends Controller
         ]);
         Mail::to('jose.cerda66@gmail.com')->send(new MensajeRecibido($mensaje));
         return view('emails.mensaje-enviado');
+        return back()->with('status', 'Recibimos tu mensaje, te responderemos en menos de 24 horas');
+        
     }
 }
