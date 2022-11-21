@@ -3,11 +3,10 @@
 
 @section('content')
     <h1>Crear nuevo proyecto</h1>
-    @include('partials/validation-errors')
-    
     <form action="{{route('portafolio/store')}}" method="POST">
         @csrf
         <label for="">Titulo del proyecto</label>
+        @include('partials.session-status')
         <input type="text" name="title">
         </label>
         <br>

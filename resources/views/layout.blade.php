@@ -15,6 +15,7 @@
     </style>
 </head>
 <body >
+    @include('partials.session-status')
     <h1>Layout</h1>
     <nav>
     <ul>
